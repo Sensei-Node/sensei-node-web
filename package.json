@@ -19,8 +19,10 @@
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
+    "@mui/material": "^5.8.1",
     "axios": "^0.21.1",
     "busboy": "^1.5.0",
     "dayjs": "^1.11.1",
