@@ -21,6 +21,7 @@ function App() {
     '/admin/signup',
     '/admin/home',
     '/admin/home/:lang',
+    '/:locale/stake/avax',
   ];
   const privateRoutes = [
     '/signature/:id'
