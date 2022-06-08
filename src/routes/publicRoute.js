@@ -4,7 +4,7 @@ const HomePage = lazy(() => import("../pages/HomePage"));
 const LoginPage = lazy(() => import("../pages/admin/LoginPage"));
 const SignupPage = lazy(() => import("../pages/admin/SignupPage"));
 const AdminPage = lazy(() => import("../pages/admin/AdminPage"));
-const AvalanchePage = lazy(() => import("../pages/landings/Avalanche"));
+const LandingPage = lazy(() => import("../pages/landing"));
 
 export const publicRoute = [
   {
@@ -38,8 +38,8 @@ export const publicRoute = [
     exact: true,
   },
   {
-    path: "/:locale/stake/avax",
-    component: AvalanchePage,
+    path: "/:locale/stake/:token",
+    component: LandingPage,
     exact: true,
   }
 ]
