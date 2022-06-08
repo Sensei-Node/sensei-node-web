@@ -4,7 +4,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 
 export const Header = styled(Grid)`
 	font-family: 'Nimbus Sans D OT', sans-serif;
-	position: relative;
+	position: absolute;
 	width: 100%;
 	box-sizing: border-box;
 	display: flex;
