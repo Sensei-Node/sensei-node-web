@@ -24,7 +24,7 @@ const LandingPage = (props) => {
 
 	return (
 		<>
-			<Header />
+			<Header token={token} />
 			<Hero backgroundColor={protocol.backgroundColor}>
 				<HeroInfoContainer>
 					<Isotype src={senseiIso} alt='Sensei Node Iso' />
