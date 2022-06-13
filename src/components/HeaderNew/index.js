@@ -1,4 +1,5 @@
 import senseiLogo from '../../../public/sensei-logo-white.png';
+import { useLocation } from 'react-router-dom';
 
 import {
 	Header,
@@ -15,16 +16,24 @@ import {
 
 import { languages, socialNetworks, menuItems } from './constants';
 
-const index = () => {
+const index = ({ token }) => {
+	const { pathname } = useLocation();
+
 	return (
 		<Header>
 			<TopArea>
 				<Languages>
-					{languages.map((language) => (
-						<Language key={language.value} to={language.value}>
-							{language.value}
-						</Language>
-					))}
+					{languages.map(
+						({ value }) =>
+							pathname.split('/')[1] !== value.toLowerCase() && (
+								<Language
+									key={value}
+									to={`/${value.toLocaleLowerCase()}/stake/${token}`}
+								>
+									{value}
+								</Language>
+							)
+					)}
 				</Languages>
 				<SocialNetworks>
 					{socialNetworks.map((sn) => (
