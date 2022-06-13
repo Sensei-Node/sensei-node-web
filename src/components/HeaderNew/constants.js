@@ -1,6 +1,6 @@
 import { GitHub, Twitter, LinkedIn } from '@mui/icons-material';
 
-export const languages = [{ value: 'ES' }, { value: 'EN' }, { value: 'PT' }];
+export const languages = [{ value: 'ES' }, { value: 'US' }, { value: 'PT' }];
 
 export const socialNetworks = [
 	{ title: 'Github', Icon: () => <GitHub /> },
