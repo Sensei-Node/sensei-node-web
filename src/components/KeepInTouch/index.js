@@ -17,7 +17,7 @@ import {
 	Cards,
 } from './styles';
 
-const index = ({ keepInTouchInfo, token }) => {
+const index = ({ keepInTouchInfo, token, language }) => {
 	return (
 		<KeepInTouch>
 			<Content>
@@ -41,7 +41,7 @@ const index = ({ keepInTouchInfo, token }) => {
 				</Form>
 				<CardsContainer>
 					<CardTitle>{keepInTouchInfo.cardsTitle}</CardTitle>
-					<Cards isProtocol={true} token={token} />
+					<Cards isProtocol={true} token={token} language={language} />
 				</CardsContainer>
 			</Content>
 		</KeepInTouch>

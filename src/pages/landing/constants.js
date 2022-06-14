@@ -614,9 +614,8 @@ export const protocols = {
 							{
 								text: (
 									<span>
-										Clique em <strong>'Ganhar'</strong>na barra lateral direita
-										e depois clique no botão
-										<strong>'Transfer'</strong>.
+										Clique em <strong>'Ganhar' </strong>na barra lateral direita
+										e depois clique no botão <strong> 'Transfer'</strong>.
 									</span>
 								),
 								helperText: null,
@@ -631,7 +630,7 @@ export const protocols = {
 										Certifique-se de transferir o valor que deseja apostar mais
 										0,001 AVAX, que é a taxa que você pagará para transferir
 										entre as redes. Clique novamente em
-										<strong>‘Transfer’</strong>para confirmar. E lembre-se de
+										<strong> ‘Transfer’ </strong>para confirmar. E lembre-se de
 										que o valor mínimo para apostar e delegar é de 25 AVAX,
 										portanto, certifique-se de transferir pelo menos 25.001 AVAX
 										de X-Chain para P-Chain.
@@ -766,7 +765,7 @@ export const protocols = {
 					{
 						text: (
 							<>
-								Síguenos en{' '}
+								Siga-nos no{' '}
 								<a href='https://twitter.com/SenseiNode' target='_blank'>
 									Twitter
 								</a>

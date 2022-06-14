@@ -8,7 +8,7 @@ import NewsIcon from '../icons/news';
 import axios from 'axios';
 const { DateTime } = require('luxon');
 
-import {tokenCards} from './constans';
+import { tokenCards } from './constans';
 
 const Oldnews = [
 	{
@@ -53,7 +53,15 @@ const Oldnews = [
 	},
 ];
 
-const NewBox = ({ title, date, description, picture, link, source, isProtocol }) => {
+const NewBox = ({
+	title,
+	date,
+	description,
+	picture,
+	link,
+	source,
+	isProtocol,
+}) => {
 	let { locale } = useParams();
 	locale = locale || 'us';
 
@@ -66,20 +74,20 @@ const NewBox = ({ title, date, description, picture, link, source, isProtocol })
 				className='new-img'
 				style={{ backgroundImage: `url(${picture})` }}
 			></div>
-      {source && (
-
-			<div className='link-icon'>
-				<div className='icon-container'>
-					<NewsIcon />
-					<span>{source}</span>
+			{source && (
+				<div className='link-icon'>
+					<div className='icon-container'>
+						<NewsIcon />
+						<span>{source}</span>
+					</div>
 				</div>
-			</div>
-      )}
+			)}
 		</a>
 	);
 };
 
-const News = ({ isProtocol, token }) => {
+const News = ({ isProtocol, token, language }) => {
+	console.log(language);
 	let { locale } = useParams();
 	locale = locale || 'us';
 	const [cardsInfo, setCardsInfo] = useState(false);
@@ -153,7 +161,7 @@ const News = ({ isProtocol, token }) => {
 
 				.date {
 					color: #b0efa8;
-          margin-top: 20px;
+					margin-top: 20px;
 				}
 
 				p {
@@ -285,26 +293,28 @@ const News = ({ isProtocol, token }) => {
 					console.log(err);
 				});
 		}
-
-
-		if (isProtocol && token) {
-  
-			setCardsInfo(tokenCards[token]);
-		}
 	}, []);
+
+	useEffect(() => {
+		if (isProtocol && token) {
+			console.log(language);
+			console.log(tokenCards[token][language]);
+			setCardsInfo(tokenCards[token][language]);
+		}
+	}, [language]);
 
 	return (
 		<div id='news' css={[Styles]}>
 			<div className='container'>
-      {!isProtocol && (
-        <>
-          <span
-            className='tag'
-            dangerouslySetInnerHTML={i18n(locale, 'news-subtitle')}
-          />
-          <h2 dangerouslySetInnerHTML={i18n(locale, 'news-title')} />
-        </>
-      )}
+				{!isProtocol && (
+					<>
+						<span
+							className='tag'
+							dangerouslySetInnerHTML={i18n(locale, 'news-subtitle')}
+						/>
+						<h2 dangerouslySetInnerHTML={i18n(locale, 'news-title')} />
+					</>
+				)}
 			</div>
 
 			<div
