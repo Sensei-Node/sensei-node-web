@@ -19,11 +19,11 @@ export const protocols = {
 		backgroundColor: '#e84142',
 		color: '#fff',
 		name: 'Avalanche',
+		token: 'avax',
 		logo: AvalancheLogo,
 		title: 'AVAX validator',
 		description:
 			'AVAX holders are incentivized to stake their tokens to secure Avalanche, while receiving a reward in return. Stake your AVAX, and earn AVAX rewards.',
-		marketCap: '$325B',
 		addressType: 'Validator Address',
 		address: 'NodeID-F3SZA2ZNdRjTBe3GYyRQFDaCXB3DyaZQQ',
 		cardData: [
