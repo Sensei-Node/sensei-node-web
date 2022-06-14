@@ -39,7 +39,8 @@ export const GetInTouchSubTitle = styled(Typography)`
 
 export const Button = styled(MUIButton)`
 	font-family: 'Nimbus Sans D OT', sans-serif;
-	width: 50%;
+	width: 100%;
+	padding: 8px 16px;
 	font-size: 24px;
 	font-weight: 300;
 	color: #fff;
