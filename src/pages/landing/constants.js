@@ -285,6 +285,12 @@ export const protocols = {
 					</>
 				),
 			},
+			getInTouch: {
+				title: 'Need help?',
+				description:
+					'Quick personal assistence for both beginner and experienced inquiries.',
+				buttonText: 'Get in Touch',
+			},
 		},
 		es: {
 			title: 'Validador AVAX',
@@ -526,6 +532,12 @@ export const protocols = {
 					</>
 				),
 			},
+			getInTouch: {
+				title: '¿Necesitás ayuda?',
+				description:
+					'Asistencia personal rápida para consultas de principiantes y experimentados.',
+				buttonText: 'Contactanos',
+			},
 		},
 		pt: {
 			title: 'Validador AVAX',
@@ -562,22 +574,7 @@ export const protocols = {
 					value: 'www.avax.network/',
 				},
 			],
-		},
-
-		getInTouch: {
-			us: {
-				title: 'Need help?',
-				description:
-					'Quick personal assistence for both beginner and experienced inquiries.',
-				buttonText: 'Get in Touch',
-			},
-			es: {
-				title: '¿Necesitás ayuda?',
-				description:
-					'Asistencia personal rápida para consultas de principiantes y experimentados.',
-				buttonText: 'Contactanos',
-			},
-			pt: {
+			getInTouch: {
 				title: 'Need help?',
 				description:
 					'Quick personal assistence for both beginner and experienced inquiries.',

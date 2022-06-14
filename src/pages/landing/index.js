@@ -43,7 +43,7 @@ const LandingPage = (props) => {
 				keepInTouchInfo={protocol[lang].keepInTouch}
 				token={token}
 			/>
-			<GetInTouch protocol={protocol.getInTouch[lang]} />
+			<GetInTouch protocol={protocol[lang].getInTouch} />
 			<Footer />
 		</>
 	);
