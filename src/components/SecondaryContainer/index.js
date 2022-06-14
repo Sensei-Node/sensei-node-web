@@ -10,12 +10,12 @@ import {
 	DelegateFooter,
 } from './styles';
 
-const index = ({ protocol }) => {
+const index = ({ delegateInfo }) => {
 	return (
 		<SecondaryContainer>
 			<Content>
-				<Title>{protocol.delegate_to_us.title}</Title>
-				{protocol.delegate_to_us.steps.map((step, index) => (
+				<Title>{delegateInfo.title}</Title>
+				{delegateInfo.steps.map((step, index) => (
 					<>
 						<SubTitle>{step.title}</SubTitle>
 						{step.instructions.map((inst, index) => (
@@ -29,8 +29,8 @@ const index = ({ protocol }) => {
 						))}
 					</>
 				))}
-				{protocol.delegate_to_us.footer && (
-					<DelegateFooter>{protocol.delegate_to_us.footer}</DelegateFooter>
+				{delegateInfo.footer && (
+					<DelegateFooter>{delegateInfo.footer}</DelegateFooter>
 				)}
 			</Content>
 		</SecondaryContainer>

@@ -14,13 +14,11 @@ const index = ({ protocol }) => {
 		<GetInTouch>
 			<GetInTouchContent>
 				<GetInTouchPanel>
-					<GetInTouchTitle>{protocol.getInTouch.title}</GetInTouchTitle>
-					<GetInTouchSubTitle>
-						{protocol.getInTouch.description}
-					</GetInTouchSubTitle>
+					<GetInTouchTitle>{protocol.title}</GetInTouchTitle>
+					<GetInTouchSubTitle>{protocol.description}</GetInTouchSubTitle>
 				</GetInTouchPanel>
 				<GetInTouchPanel alignItems='end'>
-					<Button>{protocol.getInTouch.buttonText}</Button>
+					<Button>{protocol.buttonText}</Button>
 				</GetInTouchPanel>
 			</GetInTouchContent>
 		</GetInTouch>

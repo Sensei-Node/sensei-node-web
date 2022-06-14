@@ -25,8 +25,9 @@ import {
 
 import { marketCapAPI } from './constants';
 
-const index = ({ protocol }) => {
-	const { token, logo, name, addressType, address, cardData } = protocol;
+const index = ({ protocol, cardInfo }) => {
+	const { token, logo, name, address } = protocol;
+	const { addressType, cardData } = cardInfo;
 	const [marketCap, setMarketCap] = useState(
 		localStorage.getItem(`${token}_marketcap`)
 	);

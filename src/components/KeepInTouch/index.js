@@ -17,30 +17,30 @@ import {
 	Cards,
 } from './styles';
 
-const index = ({ protocol, token }) => {
+const index = ({ keepInTouchInfo, token }) => {
 	return (
 		<KeepInTouch>
 			<Content>
-				<Title>{protocol.keepInTouch.title}</Title>
+				<Title>{keepInTouchInfo.title}</Title>
 				<KeepInTouchDescription>
-					{protocol.keepInTouch.description}
+					{keepInTouchInfo.description}
 				</KeepInTouchDescription>
-				<ThanksText>{protocol.keepInTouch.thanksText}</ThanksText>
+				<ThanksText>{keepInTouchInfo.thanksText}</ThanksText>
 				<Form>
 					<FormInputs>
-						{protocol.keepInTouch.formInputs.map((input) => (
+						{keepInTouchInfo.formInputs.map((input) => (
 							<TextField placeholder={input.placeholder} />
 						))}
-						<Button>Send</Button>
+						<Button>{keepInTouchInfo.buttonText}</Button>
 					</FormInputs>
 					<FormLinks>
-						{protocol.keepInTouch.formLinks.map((link) => (
+						{keepInTouchInfo.formLinks.map((link) => (
 							<FormLink>{link.text}</FormLink>
 						))}
 					</FormLinks>
 				</Form>
 				<CardsContainer>
-					<CardTitle>{protocol.keepInTouch.cardsTitle}</CardTitle>
+					<CardTitle>{keepInTouchInfo.cardsTitle}</CardTitle>
 					<Cards isProtocol={true} token={token} />
 				</CardsContainer>
 			</Content>

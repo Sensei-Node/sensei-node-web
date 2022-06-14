@@ -15,16 +15,16 @@ import {
 	Divider,
 } from './styles';
 
-const index = ({ protocol }) => {
+const index = ({ guide, logo }) => {
 	return (
 		<Container>
 			<Guide>
 				<GuideHeader>
-					<Logo src={protocol.logo} />
-					<GuideTitle>{protocol.guide.title}</GuideTitle>
+					<Logo src={logo} />
+					<GuideTitle>{guide.title}</GuideTitle>
 				</GuideHeader>
 				<GuideBody>
-					{protocol.guide.steps.map((step, index) => {
+					{guide.steps.map((step, index) => {
 						return (
 							<React.Fragment key={step.title}>
 								<StepTitle>{step.title}</StepTitle>
@@ -46,7 +46,7 @@ const index = ({ protocol }) => {
 										</React.Fragment>
 									);
 								})}
-								{index < protocol.guide.steps.length - 1 && <Divider />}
+								{index < guide.steps.length - 1 && <Divider />}
 							</React.Fragment>
 						);
 					})}
