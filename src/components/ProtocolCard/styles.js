@@ -1,6 +1,9 @@
 import { Grid, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
+import { ContentCopy } from '@mui/icons-material';
+import { default as MUITooltip } from '@mui/material/Tooltip';
+
 export const Card = styled(Grid)`
 	position: absolute;
 	top: 75%;
@@ -111,4 +114,23 @@ export const Value = styled(Typography)`
 	font-family: 'Nimbus Sans D OT', sans-serif;
 	font-size: 24px;
 	font-weight: 700;
+`;
+
+export const CopyIcon = styled(ContentCopy)`
+	padding: 5px;
+	box-sizing: content-box;
+	transition: all 0.5s ease;
+	&:hover {
+		background: rgba(0, 0, 0, 0.075);
+		border-radius: 5px;
+		cursor: pointer;
+	}
+`;
+
+export const Tooltip = styled(MUITooltip)``;
+
+export const TooltipTitle = styled('span')`
+	font-family: 'Nimbus Sans D OT', sans-serif;
+	color: #fff;
+	font-size: 12px;
 `;

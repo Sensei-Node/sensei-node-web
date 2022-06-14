@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ContentCopy } from '@mui/icons-material';
+import CopyToClipboard from 'react-copy-to-clipboard';
 import axios from 'axios';
 
 import {
@@ -14,6 +14,9 @@ import {
 	AddressContainer,
 	AddressType,
 	Address,
+	CopyIcon,
+	Tooltip,
+	TooltipTitle,
 	Body,
 	Column,
 	Label,
@@ -27,6 +30,7 @@ const index = ({ protocol }) => {
 	const [marketCap, setMarketCap] = useState(
 		localStorage.getItem(`${token}_marketcap`)
 	);
+	const [showTooltip, setShowTooltip] = useState(false);
 
 	useEffect(() => {
 		const options = {
@@ -51,6 +55,13 @@ const index = ({ protocol }) => {
 			});
 	}, []);
 
+	const handleCopyAddress = () => {
+		setShowTooltip(true);
+		setTimeout(() => {
+			setShowTooltip(false);
+		}, 2000);
+	};
+
 	return (
 		<Card>
 			<Header>
@@ -65,7 +76,18 @@ const index = ({ protocol }) => {
 				<AddressContainer>
 					<AddressType>{addressType}</AddressType>
 					<Address>{address}</Address>
-					<ContentCopy />
+					<CopyToClipboard onCopy={() => handleCopyAddress()} text={address}>
+						<Tooltip
+							open={showTooltip}
+							disableFocusListener
+							disableHoverListener
+							disableTouchListener
+							title={<TooltipTitle>Address copied!</TooltipTitle>}
+							arrow
+						>
+							<CopyIcon />
+						</Tooltip>
+					</CopyToClipboard>
 				</AddressContainer>
 			</Header>
 			<Body>
