@@ -542,43 +542,251 @@ export const protocols = {
 		pt: {
 			title: 'Validador AVAX',
 			description:
-				'AVAX holders are incentivized to stake their tokens to secure Avalanche, while receiving a reward in return. Stake your AVAX, and earn AVAX rewards.',
-			addressType: 'Validator Address',
+				'Os portadores de AVAX são incentivados a apostar as suas fichas para garantir a Avalanche, enquanto recebem uma recompensa em troca. Aposte o seu AVAX, e ganhe recompensas AVAX.',
+			addressType: 'Address do validador',
 			cardData: [
 				{
-					title: 'Ganancia Estimada',
+					title: 'Recompensas previstas',
 					value: '9.43%',
 				},
 				{
-					title: 'Comisiones',
+					title: 'Taxas',
 					value: '10%',
 				},
 				{
-					title: 'Periodo Min Staking ',
+					title: 'Período Min de Staking',
 					value: '2 semanas',
 				},
 				{
-					title: 'Periodo Max Staking ',
-					value: '1 año',
+					title: 'Período Max de  Staking ',
+					value: '1 ano',
 				},
 				{
-					title: 'Delegado a nosotros',
+					title: 'Delegar para nós',
 					value: '2,700 AVAX',
 				},
 				{
-					title: 'Frecuencia de pago',
-					value: '8 segundos cada bloque',
+					title: 'Frequência de pagamento',
+					value: '8 segundos por bloco',
 				},
 				{
-					title: 'Sitio Oficial',
+					title: 'Site Oficial',
 					value: 'www.avax.network/',
 				},
 			],
-			getInTouch: {
-				title: 'Need help?',
+			guide: {
+				title: 'Guia de Estacação AVAX',
+				steps: [
+					{
+						title: 'Primeiros passos',
+						description: null,
+						instructions: [
+							{
+								text: (
+									<strong>
+										O primeiro passo é acessar sua carteira AVAX{' '}
+										<Link href='https://wallet.avax.network/' target='_blank'>
+											[https://wallet.avax.network/]
+										</Link>
+										.
+									</strong>
+								),
+								helperText: (
+									<>
+										Se você ainda não criou uma, pode seguir o passo a passo da
+										criação clicando no botão:{' '}
+										<strong>“Criar Nova Carteira”</strong>
+									</>
+								),
+								images: [],
+							},
+						],
+					},
+					{
+						title: 'Transferência para P-Chain',
+						description: (
+							<span>
+								Para apostar AVAX, você deve primeiro transferir a quantidade de
+								AVAX (mín. 25 AVAX) para o P-Chain.
+							</span>
+						),
+						instructions: [
+							{
+								text: (
+									<span>
+										Clique em <strong>'Ganhar'</strong>na barra lateral direita
+										e depois clique no botão
+										<strong>'Transfer'</strong>.
+									</span>
+								),
+								helperText: null,
+								images: [
+									{ src: Transfer2PChain1, alt: 'Transfer to P-Chain 1' },
+									{ src: Transfer2PChain2, alt: 'Transfer to P-Chain 2' },
+								],
+							},
+							{
+								text: (
+									<span>
+										Certifique-se de transferir o valor que deseja apostar mais
+										0,001 AVAX, que é a taxa que você pagará para transferir
+										entre as redes. Clique novamente em
+										<strong>‘Transfer’</strong>para confirmar. E lembre-se de
+										que o valor mínimo para apostar e delegar é de 25 AVAX,
+										portanto, certifique-se de transferir pelo menos 25.001 AVAX
+										de X-Chain para P-Chain.
+									</span>
+								),
+								helperText: null,
+								images: [],
+							},
+						],
+					},
+				],
+			},
+			delegate_to_us: {
+				title: 'Delegado ao validador AVAX do SenseiNode',
+				steps: [
+					{
+						title: (
+							<span>
+								Agora que você tem seu AVAX no endereço P-Chain, você está
+								pronto para delegar seu stake para o nosso NodeID.
+							</span>
+						),
+						instructions: [
+							{
+								text: (
+									<span>
+										Volte para a página <strong>Ganhar</strong>e clique em{' '}
+										<strong>'Adicionar Delegador’</strong>.
+									</span>
+								),
+								images: [
+									{ src: delegateToSensei, alt: 'Delegate to SenseiNode' },
+								],
+							},
+						],
+					},
+					{
+						title: (
+							<span>
+								Ser-lhe-á apresentada uma lista de validadores ordenados pelo
+								valor total apostado, procure o nosso Node:{' '}
+								<strong>Sensei ou NodeID</strong>
+							</span>
+						),
+						instructions: [
+							{
+								text: (
+									<span>
+										Depois de ter escolhido nosso validador, você pode clicar em{' '}
+										<strong>"Select"</strong>.
+									</span>
+								),
+								images: [],
+							},
+						],
+					},
+					{
+						title: <span>Em seguida, a página do delegado será exibida.</span>,
+						instructions: [
+							{
+								text: (
+									<span>
+										Você pode escolher o <strong>Período de Aposta</strong>.
+										(lembre-se: você não pode apostar mais do que nosso
+										validador), o valor que deseja delegar na seção Valor da
+										Aposta e especificar o Endereço de Recompensa, se você não
+										deseja receber recompensas no mesmo endereço que está usando
+										Delegar.
+									</span>
+								),
+								images: [],
+							},
+						],
+					},
+					{
+						title: null,
+						instructions: [
+							{
+								text: (
+									<span>
+										Quando tiver introduzido toda a informação, pode basta
+										clicar em <strong>'Confirm'</strong> para confirmar os dados
+										introduzidos e depois <strong>'Enviar'</strong> para
+										confirmar a delegação, e ponto final.
+									</span>
+								),
+								images: [],
+							},
+						],
+					},
+				],
+				footer: (
+					<DelegateFooterContainer>
+						Está agora a ganhar AVAX com{' '}
+						<DelegateFooterLogo src={senseiNodeLogoWhite} />
+					</DelegateFooterContainer>
+				),
+			},
+			keepInTouch: {
+				title: 'Monitorize a sua Stake e mantenha-se em contacto!',
 				description:
-					'Quick personal assistence for both beginner and experienced inquiries.',
-				buttonText: 'Get in Touch',
+					'Se desejar manter-se em contacto connosco após a sua delegação, deixe o seu endereço público e qualquer informação de contacto à sua escolha no formulário abaixo.',
+				thanksText: (
+					<>
+						Obrigado por escolher
+						<ThanksImage src={senseiNodeLogoWhite} />
+					</>
+				),
+				formInputs: [
+					{
+						placeholder: 'Endereço $AVAX público',
+					},
+					{
+						placeholder: 'Email',
+					},
+					{
+						placeholder: 'Discord ID',
+					},
+				],
+				formLinks: [
+					//{
+					// text: (
+					// 	<>
+					// 		Join the #avax{' '}
+					// 		<a href='/' target='_blank'>
+					// 			chatroom
+					// 		</a>{' '}
+					// 		in our Discord.
+					// 	</>
+					// ),
+					//},
+					{
+						text: (
+							<>
+								Síguenos en{' '}
+								<a href='https://twitter.com/SenseiNode' target='_blank'>
+									Twitter
+								</a>
+							</>
+						),
+					},
+				],
+				buttonText: 'Enviar',
+				cardsTitle: (
+					<>
+						<img src={AvalancheLogo} />
+						<span>Ferramentas e informação sobre a Avalanche</span>
+					</>
+				),
+			},
+			getInTouch: {
+				title: 'Precisa de ajuda?',
+				description:
+					'Assistência pessoal rápida para principiantes e utilizadores experientes.',
+				buttonText: 'Contate-nos',
 			},
 		},
 	},
