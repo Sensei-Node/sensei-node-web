@@ -87,7 +87,6 @@ const NewBox = ({
 };
 
 const News = ({ isProtocol, token, language }) => {
-	console.log(language);
 	let { locale } = useParams();
 	locale = locale || 'us';
 	const [cardsInfo, setCardsInfo] = useState(false);
@@ -297,8 +296,6 @@ const News = ({ isProtocol, token, language }) => {
 
 	useEffect(() => {
 		if (isProtocol && token) {
-			console.log(language);
-			console.log(tokenCards[token][language]);
 			setCardsInfo(tokenCards[token][language]);
 		}
 	}, [language]);
