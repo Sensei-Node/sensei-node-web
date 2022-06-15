@@ -1,7 +1,6 @@
 import {
 	Grid,
 	Typography,
-	FormControl,
 	TextField as MUITextField,
 	Button as MUIButton,
 } from '@mui/material';
@@ -45,7 +44,7 @@ export const ThanksText = styled(Title)`
 	margin: 60px 0;
 `;
 
-export const Form = styled(FormControl)`
+export const Form = styled('form')`
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: 1fr;

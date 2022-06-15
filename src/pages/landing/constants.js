@@ -245,13 +245,19 @@ export const protocols = {
 				),
 				formInputs: [
 					{
+						id: 'mce-WALLETADDR',
 						placeholder: 'Public $AVAX address',
+						name: 'WALLETADDR',
 					},
 					{
+						id: 'mce-EMAIL',
 						placeholder: 'Email',
+						name: 'EMAIL',
 					},
 					{
+						id: 'mce-DISCORDID',
 						placeholder: 'Discord ID',
+						name: 'DISCORDID',
 					},
 				],
 				formLinks: [
@@ -492,13 +498,19 @@ export const protocols = {
 				),
 				formInputs: [
 					{
+						id: 'mce-WALLETADDR',
 						placeholder: 'Dirección $AVAX pública',
+						name: 'WALLETADDR',
 					},
 					{
+						id: 'mce-EMAIL',
 						placeholder: 'Email',
+						name: 'EMAIL',
 					},
 					{
+						id: 'mce-DISCORDID',
 						placeholder: 'Discord ID',
+						name: 'DISCORDID',
 					},
 				],
 				formLinks: [
@@ -741,13 +753,19 @@ export const protocols = {
 				),
 				formInputs: [
 					{
+						id: 'mce-WALLETADDR',
 						placeholder: 'Endereço $AVAX público',
+						name: 'WALLETADDR',
 					},
 					{
+						id: 'mce-EMAIL',
 						placeholder: 'Email',
+						name: 'EMAIL',
 					},
 					{
+						id: 'mce-DISCORDID',
 						placeholder: 'Discord ID',
+						name: 'DISCORDID',
 					},
 				],
 				formLinks: [

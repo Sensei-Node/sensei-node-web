@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
 	Content,
@@ -18,6 +18,12 @@ import {
 } from './styles';
 
 const index = ({ keepInTouchInfo, token, language }) => {
+	const [formValues, setFormValues] = useState({});
+
+	const handleOnChange = (e) => {
+		setFormValues({ ...formValues, [e.target.name]: e.target.value });
+	};
+
 	return (
 		<KeepInTouch>
 			<Content>
@@ -26,12 +32,36 @@ const index = ({ keepInTouchInfo, token, language }) => {
 					{keepInTouchInfo.description}
 				</KeepInTouchDescription>
 				<ThanksText>{keepInTouchInfo.thanksText}</ThanksText>
-				<Form>
+
+				<Form
+					action='https://senseinode.us5.list-manage.com/subscribe/post?u=9a345a8d92f88e03240efcfb6&amp;id=8beaca3651'
+					method='post'
+					id='mc-embedded-subscribe-form'
+					name='mc-embedded-subscribe-form'
+					className='validate'
+					target='_blank'
+					novalidate
+				>
 					<FormInputs>
 						{keepInTouchInfo.formInputs.map((input) => (
-							<TextField placeholder={input.placeholder} />
+							<TextField
+								id={input.id}
+								name={input.name}
+								placeholder={input.placeholder}
+								type={input.name === 'EMAIL' ? 'email' : 'text'}
+								required={input.name === 'EMAIL'}
+								value={formValues[input.name]}
+								onChange={handleOnChange}
+							/>
 						))}
-						<Button>{keepInTouchInfo.buttonText}</Button>
+						<input
+							type='hidden'
+							value={token.toUpperCase()}
+							name='PROTOCOL'
+							className=''
+							id='mce-PROTOCOL'
+						/>
+						<Button type='submit'>{keepInTouchInfo.buttonText}</Button>
 					</FormInputs>
 					<FormLinks>
 						{keepInTouchInfo.formLinks.map((link) => (
