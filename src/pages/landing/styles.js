@@ -73,7 +73,7 @@ export const MainTitle = styled(Typography)`
 	}
 
 	@media (max-width: ${breakpoints.sm}) {
-		font-size: 52px;
+		font-size: 48px;
 	}
 
 	@media (max-width: ${breakpoints.xs}) {
@@ -93,6 +93,7 @@ export const Description = styled(Typography)`
 
 	@media (max-width: ${breakpoints.sm}) {
 		font-size: 20px;
+		margin-bottom: 140px;
 	}
 
 	@media (max-width: ${breakpoints.xs}) {
