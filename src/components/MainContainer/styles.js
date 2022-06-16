@@ -3,6 +3,8 @@ import { styled } from '@mui/material/styles';
 
 import MainContainerBG from '../../../public/landing-main-container-bg.png';
 
+import { breakpoints } from '../../util/breakpoints.js';
+
 export const Container = styled(Grid)`
 	background: url(${MainContainerBG}), #f4f4f4;
 	background-size: contain;
@@ -28,6 +30,14 @@ export const Guide = styled(Grid)`
 	align-items: center;
 	border: 1.5px solid #c4c4c4;
 	border-radius: 20px;
+
+	@media (max-width: ${breakpoints.md}) {
+		padding: 100px 50px;
+	}
+
+	@media (max-width: ${breakpoints.sm}) {
+		padding: 80px 20px;
+	}
 `;
 
 export const GuideHeader = styled(Grid)`
@@ -38,6 +48,7 @@ export const GuideHeader = styled(Grid)`
 	justify-content: center;
 	align-items: center;
 `;
+
 export const Logo = styled('img')`
 	width: 68px;
 	height: 68px;
@@ -48,6 +59,14 @@ export const GuideTitle = styled(Typography)`
 	font-size: 36px;
 	color: #e84142;
 	margin-top: 40px;
+
+	@media (max-width: ${breakpoints.md}) {
+		font-size: 32px;
+	}
+
+	@media (max-width: ${breakpoints.sm}) {
+		font-size: 28px;
+	}
 `;
 
 export const GuideBody = styled(Grid)`
@@ -55,6 +74,10 @@ export const GuideBody = styled(Grid)`
 	margin-top: 80px;
 	display: flex;
 	flex-direction: column;
+
+	@media (max-width: ${breakpoints.md}) {
+		margin-top: 40px;
+	}
 `;
 
 export const StepTitle = styled(Typography)`
@@ -62,12 +85,34 @@ export const StepTitle = styled(Typography)`
 	font-weight: 700;
 	font-size: 40px;
 	margin-bottom: 40px;
+
+	@media (max-width: ${breakpoints.md}) {
+		font-size: 36px;
+		margin-bottom: 12px;
+	}
+
+	@media (max-width: ${breakpoints.sm}) {
+		font-size: 32px;
+	}
+
+	@media (max-width: ${breakpoints.xs}) {
+		font-size: 28px;
+	}
 `;
 
 export const StepDescription = styled(Typography)`
 	font-family: 'Nimbus Sans D OT', sans-serif;
 	font-size: 30px;
 	margin-bottom: 24px;
+
+	@media (max-width: ${breakpoints.md}) {
+		font-size: 26px;
+		margin-bottom: 12px;
+	}
+
+	@media (max-width: ${breakpoints.sm}) {
+		font-size: 22px;
+	}
 `;
 
 export const InstructionText = styled(Typography)`
@@ -85,11 +130,32 @@ export const InstructionText = styled(Typography)`
 		top: 36px;
 		left: 0;
 	}
+
+	@media (max-width: ${breakpoints.md}) {
+		font-size: 26px;
+		margin-bottom: 12px;
+		padding: 0 20px;
+		&:before {
+			top: 11px;
+		}
+	}
+
+	@media (max-width: ${breakpoints.sm}) {
+		font-size: 22px;
+	}
 `;
 
 export const InstructionHelperText = styled(Typography)`
 	font-family: 'Nimbus Sans D OT', sans-serif;
 	font-size: 30px;
+
+	@media (max-width: ${breakpoints.md}) {
+		font-size: 26px;
+	}
+
+	@media (max-width: ${breakpoints.sm}) {
+		font-size: 22px;
+	}
 `;
 
 export const InstructionImage = styled('img')`

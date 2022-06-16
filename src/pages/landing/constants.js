@@ -166,9 +166,8 @@ export const protocols = {
 							{
 								text: (
 									<span>
-										Insert{' '}
-										<strong>NodeID-F3SZA2ZNdRjTBe3GYyRQFDaCXB3DyaZQQ</strong> in
-										the "Search Node ID" field and press the "Select" button.
+										Search for our Node: Sensei or NodeID and press the "Select"
+										button.
 									</span>
 								),
 								images: [],

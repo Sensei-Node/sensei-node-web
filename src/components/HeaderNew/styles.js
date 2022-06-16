@@ -2,6 +2,8 @@ import { Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { HashLink as Link } from 'react-router-hash-link';
 
+import { breakpoints } from '../../util/breakpoints.js';
+
 export const Header = styled(Grid)`
 	font-family: 'Nimbus Sans D OT', sans-serif;
 	position: absolute;
@@ -16,17 +18,20 @@ export const Header = styled(Grid)`
 `;
 
 export const Navbar = styled(Grid)`
-	width: 100%;
+	width: 80%;
 	max-width: 1280px;
 	height: 100%;
 	padding-top: 12px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	@media (max-width: ${breakpoints.lg}) {
+		width: 90%;
+	}
 `;
 
 export const TopArea = styled(Grid)`
-	width: 100%;
+	width: 80%;
 	max-width: 1280px;
 	height: 100%;
 	box-sizing: border-box;
@@ -34,6 +39,9 @@ export const TopArea = styled(Grid)`
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid #c4c4c4;
+	@media (max-width: ${breakpoints.lg}) {
+		width: 90%;
+	}
 `;
 
 export const Languages = styled(Grid)`
@@ -63,6 +71,9 @@ export const SocialNetworksIcon = styled(Grid)`
 
 export const Logo = styled('img')`
 	width: 420px;
+	@media (max-width: ${breakpoints.md}) {
+		width: 48px;
+	}
 `;
 
 export const Menu = styled(Grid)``;

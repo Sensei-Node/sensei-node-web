@@ -3,6 +3,8 @@ import { styled } from '@mui/material/styles';
 
 import SecondaryContainerBG from '../../../public/landing-secondary-container-bg.png';
 
+import { breakpoints } from '../../util/breakpoints.js';
+
 export const SecondaryContainer = styled(Grid)`
 	background: url(${SecondaryContainerBG}), #1b1b1b;
 	background-size: cover;
@@ -23,6 +25,14 @@ export const Content = styled(Grid)`
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
+
+	@media (max-width: ${breakpoints.md}) {
+		padding: 100px 50px;
+	}
+
+	@media (max-width: ${breakpoints.sm}) {
+		padding: 80px 20px;
+	}
 `;
 
 export const Title = styled(Typography)`
@@ -30,12 +40,34 @@ export const Title = styled(Typography)`
 	font-size: 40px;
 	font-weight: 700;
 	margin-bottom: 20px;
+
+	@media (max-width: ${breakpoints.md}) {
+		font-size: 36px;
+		margin-bottom: 12px;
+	}
+
+	@media (max-width: ${breakpoints.sm}) {
+		font-size: 32px;
+	}
+
+	@media (max-width: ${breakpoints.xs}) {
+		font-size: 28px;
+	}
 `;
 
 export const SubTitle = styled(Typography)`
 	font-family: 'Nimbus Sans D OT', sans-serif;
 	font-size: 30px;
 	margin-top: 64px;
+
+	@media (max-width: ${breakpoints.md}) {
+		font-size: 26px;
+		margin-top: 24px;
+	}
+
+	@media (max-width: ${breakpoints.sm}) {
+		font-size: 22px;
+	}
 `;
 
 export const InstructionText = styled(Typography)`
@@ -53,14 +85,36 @@ export const InstructionText = styled(Typography)`
 		top: 16px;
 		left: 0;
 	}
+
+	@media (max-width: ${breakpoints.md}) {
+		font-size: 26px;
+		margin-bottom: 12px;
+		padding: 0 20px;
+		&:before {
+			top: 11px;
+		}
+	}
+
+	@media (max-width: ${breakpoints.sm}) {
+		font-size: 22px;
+	}
 `;
 
 export const Image = styled('img')`
 	margin: 40px auto;
+	width: 100%;
 `;
 
 export const DelegateFooter = styled(Typography)`
 	font-family: 'Nimbus Sans D OT', sans-serif;
 	font-size: 40px;
 	font-weight: 700;
+
+	@media (max-width: ${breakpoints.md}) {
+		font-size: 24px;
+	}
+
+	@media (max-width: ${breakpoints.sm}) {
+		font-size: 16px;
+	}
 `;

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import axios from 'axios';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 import {
 	Card,
@@ -24,6 +25,7 @@ import {
 } from './styles';
 
 import { marketCapAPI } from './constants';
+import { breakpoints } from '../../util/breakpoints.js';
 
 const index = ({ protocol, cardInfo }) => {
 	const { token, logo, name, address } = protocol;
@@ -32,6 +34,7 @@ const index = ({ protocol, cardInfo }) => {
 		localStorage.getItem(`${token}_marketcap`)
 	);
 	const [showTooltip, setShowTooltip] = useState(false);
+	const isMobile = useMediaQuery(`(max-width:${breakpoints.md})`);
 
 	useEffect(() => {
 		const options = {
@@ -63,6 +66,12 @@ const index = ({ protocol, cardInfo }) => {
 		}, 2000);
 	};
 
+	const truncate = (str) => {
+		return str.length > 30
+			? str.substr(0, 9) + '...' + str.substr(str.length - 8, str.length)
+			: str;
+	};
+
 	return (
 		<Card>
 			<Header>
@@ -76,7 +85,7 @@ const index = ({ protocol, cardInfo }) => {
 				<Divider />
 				<AddressContainer>
 					<AddressType>{addressType}</AddressType>
-					<Address>{address}</Address>
+					<Address>{isMobile ? truncate(address) : address}</Address>
 					<CopyToClipboard onCopy={() => handleCopyAddress()} text={address}>
 						<Tooltip
 							open={showTooltip}

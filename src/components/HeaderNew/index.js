@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
+import senseiIso from '../../../public/sensei-logo-footer.png';
 import senseiLogo from '../../../public/sensei-logo-white.png';
 import { useLocation } from 'react-router-dom';
 
@@ -17,9 +19,11 @@ import {
 } from './styles';
 
 import { languages, socialNetworks, menuItems } from './constants';
+import { breakpoints } from '../../util/breakpoints.js';
 
 const index = ({ token, setLang, lang }) => {
 	const { pathname } = useLocation();
+	const isMobile = useMediaQuery(`(max-width:${breakpoints.md})`);
 
 	useEffect(() => {
 		setLang(pathname.split('/')[1]);
@@ -56,7 +60,7 @@ const index = ({ token, setLang, lang }) => {
 				</SocialNetworks>
 			</TopArea>
 			<Navbar>
-				<Logo src={senseiLogo} alt='Sensei Node Logo' />
+				<Logo src={isMobile ? senseiIso : senseiLogo} alt='Sensei Node Logo' />
 				<Menu>
 					{menuItems.map(
 						(item) =>

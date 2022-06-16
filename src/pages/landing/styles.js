@@ -3,6 +3,8 @@ import { styled } from '@mui/material/styles';
 
 import HeroBG from '../../../public/protocol-hero-bg.png';
 
+import { breakpoints } from '../../util/breakpoints.js';
+
 export const Content = styled(Grid)`
 	width: 100%;
 	max-width: 1280px;
@@ -49,6 +51,10 @@ export const HeroInfoContainer = styled(Grid)`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+
+	@media (max-width: ${breakpoints.lg}) {
+		width: 90%;
+	}
 `;
 
 export const Isotype = styled('img')`
@@ -61,6 +67,18 @@ export const MainTitle = styled(Typography)`
 	color: #fff;
 	font-size: 96px;
 	font-weight: 300;
+
+	@media (max-width: ${breakpoints.lg}) {
+		font-size: 80px;
+	}
+
+	@media (max-width: ${breakpoints.sm}) {
+		font-size: 52px;
+	}
+
+	@media (max-width: ${breakpoints.xs}) {
+		font-size: 44px;
+	}
 `;
 
 export const Description = styled(Typography)`
@@ -72,6 +90,14 @@ export const Description = styled(Typography)`
 	width: 100%;
 	margin-bottom: 100px;
 	text-align: center;
+
+	@media (max-width: ${breakpoints.sm}) {
+		font-size: 20px;
+	}
+
+	@media (max-width: ${breakpoints.xs}) {
+		font-size: 16px;
+	}
 `;
 
 export const Link = styled('a')`
@@ -83,12 +109,19 @@ export const Link = styled('a')`
 export const DelegateFooterLogo = styled('img')`
 	margin-left: 16px;
 	width: 370px;
+
+	@media (max-width: ${breakpoints.md}) {
+		width: 215px;
+	}
 `;
 
 export const DelegateFooterContainer = styled(Grid)`
 	display: flex;
 	align-items: center;
 	margin: 80px auto;
+	@media (max-width: ${breakpoints.sm}) {
+		flex-direction: column;
+	}
 `;
 
 export const ThanksImage = styled('img')`

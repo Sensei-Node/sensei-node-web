@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 import Header from '../../components/HeaderNew';
 import ProtocolCard from '../../components/ProtocolCard';
@@ -18,19 +19,22 @@ import {
 	MainTitle,
 	Description,
 } from './styles';
+
 import { protocols } from './constants';
+import { breakpoints } from '../../util/breakpoints.js';
 
 const LandingPage = (props) => {
 	const [lang, setLang] = useState('us');
 	const token = props.match.params.token;
 	const protocol = protocols[token];
+	const isDesktop = useMediaQuery(`(min-width:${breakpoints.md})`);
 
 	return (
 		<>
 			<Header token={token} setLang={setLang} lang={lang} />
 			<Hero backgroundColor={protocol.backgroundColor}>
 				<HeroInfoContainer>
-					<Isotype src={senseiIso} alt='Sensei Node Iso' />
+					{isDesktop && <Isotype src={senseiIso} alt='Sensei Node Iso' />}
 					<MainTitle component='h1'>{protocol[lang].title}</MainTitle>
 					<Description>{protocol[lang].description}</Description>
 					<ProtocolCard protocol={protocol} cardInfo={protocol[lang]} />

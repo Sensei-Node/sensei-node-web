@@ -7,6 +7,7 @@ import {
 	GetInTouchPanel,
 	GetInTouchTitle,
 	GetInTouchSubTitle,
+	Link,
 } from './styles.js';
 
 const index = ({ protocol }) => {
@@ -18,12 +19,12 @@ const index = ({ protocol }) => {
 					<GetInTouchSubTitle>{protocol.description}</GetInTouchSubTitle>
 				</GetInTouchPanel>
 				<GetInTouchPanel alignItems='end'>
-					<a
+					<Link
 						href='https://us5.list-manage.com/contact-form?u=9a345a8d92f88e03240efcfb6&form_id=d832bc00fc84c97d62fa9aa05161379d'
 						target='_blank'
 					>
 						<Button>{protocol.buttonText}</Button>
-					</a>
+					</Link>
 				</GetInTouchPanel>
 			</GetInTouchContent>
 		</GetInTouch>

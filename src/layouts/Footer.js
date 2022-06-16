@@ -63,7 +63,7 @@ const footerStyle = css`
 		nav {
 			flex-direction: column;
 			justify-content: flex-start;
-			align-items: flex-start;
+			align-items: center;
 			.sensei-logo-container {
 				margin-bottom: 40px;
 			}

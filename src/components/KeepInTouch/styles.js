@@ -8,6 +8,8 @@ import { styled } from '@mui/material/styles';
 
 import News from '../news';
 
+import { breakpoints } from '../../util/breakpoints.js';
+
 export const Content = styled(Grid)`
 	width: 100%;
 	max-width: 1280px;
@@ -17,6 +19,14 @@ export const Content = styled(Grid)`
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
+
+	@media (max-width: ${breakpoints.md}) {
+		padding: 100px 50px;
+	}
+
+	@media (max-width: ${breakpoints.sm}) {
+		padding: 80px 20px;
+	}
 `;
 
 export const Title = styled(Typography)`
@@ -24,6 +34,19 @@ export const Title = styled(Typography)`
 	font-size: 40px;
 	font-weight: 700;
 	margin-bottom: 20px;
+
+	@media (max-width: ${breakpoints.md}) {
+		font-size: 36px;
+		margin-bottom: 12px;
+	}
+
+	@media (max-width: ${breakpoints.sm}) {
+		font-size: 32px;
+	}
+
+	@media (max-width: ${breakpoints.xs}) {
+		font-size: 28px;
+	}
 `;
 
 export const KeepInTouch = styled(Grid)`
@@ -38,16 +61,31 @@ export const KeepInTouch = styled(Grid)`
 export const KeepInTouchDescription = styled(Typography)`
 	font-family: 'Nimbus Sans D OT', sans-serif;
 	font-size: 30px;
+
+	@media (max-width: ${breakpoints.md}) {
+		font-size: 26px;
+	}
+
+	@media (max-width: ${breakpoints.sm}) {
+		font-size: 22px;
+	}
 `;
 
 export const ThanksText = styled(Title)`
-	margin: 60px 0;
+	@media (max-width: ${breakpoints.md}) {
+		margin: 30px 0;
+	}
 `;
 
 export const Form = styled('form')`
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: 1fr;
+
+	@media (max-width: ${breakpoints.md}) {
+		grid-template-columns: 1fr;
+		row-gap: 40px;
+	}
 `;
 
 export const FormInputs = styled(Grid)`
@@ -69,6 +107,19 @@ export const FormLink = styled(Typography)`
 	font-weight: 700;
 	& a {
 		text-decoration: underline;
+	}
+
+	@media (max-width: ${breakpoints.lg}) {
+		font-size: 36px;
+		margin-bottom: 12px;
+	}
+
+	@media (max-width: ${breakpoints.md}) {
+		font-size: 32px;
+	}
+
+	@media (max-width: ${breakpoints.sm}) {
+		font-size: 28px;
 	}
 `;
 
@@ -117,6 +168,10 @@ export const Button = styled(MUIButton)`
 
 export const CardsContainer = styled(Grid)`
 	margin-top: 80px;
+
+	@media (max-width: ${breakpoints.md}) {
+		margin-top: 40px;
+	}
 `;
 
 export const CardTitle = styled(Typography)`
@@ -128,6 +183,19 @@ export const CardTitle = styled(Typography)`
 	align-items: center;
 	& span {
 		padding-top: 10px;
+	}
+
+	@media (max-width: ${breakpoints.lg}) {
+		font-size: 32px;
+		margin-bottom: 12px;
+	}
+
+	@media (max-width: ${breakpoints.md}) {
+		font-size: 28px;
+	}
+
+	@media (max-width: ${breakpoints.sm}) {
+		font-size: 24px;
 	}
 `;
 export const Cards = styled(News)``;
