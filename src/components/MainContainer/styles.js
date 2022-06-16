@@ -163,6 +163,7 @@ export const InstructionImage = styled('img')`
 	border-radius: 20px;
 	margin: 24px 0 48px 0;
 	padding: 25px 50px;
+	width: 100%;
 `;
 
 export const Divider = styled('div')`
